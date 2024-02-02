@@ -4,6 +4,6 @@ import { prisma } from "@/lib/db";
 
 export default function Home() {
   return (
-    <Button variant="outline">Hello World</Button>
+    <Button>Hello World</Button>
   );
 }
