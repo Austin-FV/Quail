@@ -3,7 +3,6 @@ import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import { prisma } from "./db";
 
 import GoogleProvider from "next-auth/providers/google"
-import GithubProvider from "next-auth/providers/github"
 import DiscordProvider from "next-auth/providers/discord"
 
 // combining next auth with prisma with next-auth/prisma-adapter
@@ -57,6 +56,10 @@ export const authOptions: NextAuthOptions = {
         GoogleProvider({
             clientId: process.env.GOOGLE_CLIENT_ID as string,
             clientSecret: process.env.GOOGLE_CLIENT_SECRET as string
+        }),
+        DiscordProvider({
+            clientId: process.env.DISCORD_CLIENT_ID as string,
+            clientSecret: process.env.DISCORD_CLIENT_SECRET as string
         })
     ]
 }
