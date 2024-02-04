@@ -1,4 +1,4 @@
-import { DefaultSession, NextAuthOptions } from "next-auth";
+import { DefaultSession, NextAuthOptions, getServerSession } from "next-auth";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import { prisma } from "./db";
 
@@ -62,4 +62,9 @@ export const authOptions: NextAuthOptions = {
             clientSecret: process.env.DISCORD_CLIENT_SECRET as string
         })
     ]
+};
+
+// get user information if they are logged in, otherwise redirect
+export const getAuthSession = () => {
+    return getServerSession(authOptions);
 }
