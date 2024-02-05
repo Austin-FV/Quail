@@ -13,7 +13,7 @@ const SignInPopover = (props: Props) => {
                 Sign In
             </Button>
         </PopoverTrigger>
-        <PopoverContent className='w-80'>
+        <PopoverContent className=''>
             <div className='grid gap-4'>
                 <SignInButton provider='google' text='Google'/>
                 <SignInButton provider='discord' text='Discord'/>

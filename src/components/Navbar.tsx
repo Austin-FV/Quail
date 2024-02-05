@@ -7,7 +7,8 @@ import SignInPopover from './SignInPopover'
 type Props = {}
 
 const Navbar = async (props: Props) => {
-    // const session = await getAuthSession();
+    const session = await getAuthSession();
+    // console.log(session?.user);
     // if (session?.user) {
     //     return <pre>{JSON.stringify(session.user, null, 2)}</pre>;
     // } else {
@@ -22,7 +23,13 @@ const Navbar = async (props: Props) => {
                 </Link>
 
                 <div className="flex items-center">
-                    <SignInPopover/>
+                    {session?.user ? (
+                        <h1>welcome {session.user.name}</h1>
+                    ) : (
+                        <SignInPopover/>
+                    )
+                    }
+                    
                 </div>
             </div>
         </div>
