@@ -3,6 +3,7 @@ import Link from 'next/link'
 import React from 'react'
 import SignInButton from './SignInButton'
 import SignInPopover from './SignInPopover'
+import UserAccountNav from './UserAccountNav'
 
 type Props = {}
 
@@ -24,7 +25,8 @@ const Navbar = async (props: Props) => {
 
                 <div className="flex items-center">
                     {session?.user ? (
-                        <h1>welcome {session.user.name}</h1>
+                        <UserAccountNav user={session.user}/>
+                        // <h1>welcome {session.user.name}</h1>
                     ) : (
                         <SignInPopover/>
                     )
