@@ -5,7 +5,6 @@ import { User } from "next-auth"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from './ui/dropdown-menu';
 import Link from 'next/link';
 import { signOut } from 'next-auth/react';
-import { Button } from './ui/button';
 import { LogOut } from 'lucide-react';
 import UserAvatar from './UserAvatar';
 
