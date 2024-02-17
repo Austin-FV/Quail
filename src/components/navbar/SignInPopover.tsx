@@ -1,7 +1,7 @@
 import React from 'react'
-import { Popover, PopoverContent, PopoverTrigger } from './ui/popover'
-import { Button } from './ui/button'
-import SignInButton from './SignInButton'
+import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover'
+import { Button } from '../ui/button'
+import SignInButton from '../SignInButton'
 
 type Props = {}
 

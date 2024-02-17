@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { User } from "next-auth"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from './ui/dropdown-menu';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from '../ui/dropdown-menu';
 import Link from 'next/link';
 import { signOut } from 'next-auth/react';
 import { LogOut } from 'lucide-react';
@@ -20,13 +20,13 @@ const UserAccountNav = ({user}: Props) => {
             <UserAvatar user={user}/>
         </DropdownMenuTrigger>
 
-        <DropdownMenuContent className='bg-white' align='end'>
+        <DropdownMenuContent className='' align='end'>
             <div className='flex items-center justify-start gap-2 p-2'>
                 <div className="flex flex-col space-y-1 leading-none">
                     {user.name && <p className='font-medium'>{user.name}</p>}
                     {
                         user.email && (
-                            <p className='w-[200px] truncate text-sm text-zinc-700'>
+                            <p className='w-[200px] truncate text-sm text-zinc-700 dark:text-zinc-400'>
                                 {user.email}
                             </p>
                         )
