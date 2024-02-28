@@ -48,7 +48,7 @@ model User {
   image         String?
   accounts      Account[]
   sessions      Session[]
-  Game          Game[]
+  games         Game[]
 }
 
 // quiz data
@@ -66,7 +66,7 @@ model Game {
   timeEnded   DateTime
   gameType    GameType
   user        User       @relation(fields: [userId], references: [id], onDelete: Cascade)
-  Question    Question[]
+  questions   Question[]
 
   @@index([userId], name: "userId")
 }
@@ -77,8 +77,8 @@ model Question {
   answer            String
   gameId            String
   options           Json? //only for mcq, json array with 4 options with answer
+  isCorrect         Boolean? //only for mcq
   percentageCorrect Float? // for fill in the blank
-  isCorrect         Boolean? // for mcq answer
   questionType      GameType
   userAnswer        String?
 
